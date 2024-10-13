@@ -11,7 +11,8 @@ module.exports = () => {
     mode: 'development',
     entry: {
       main: './src/js/index.js',
-      install: './src/js/install.js'
+      install: './src/js/install.js',
+
     },
     output: {
       filename: '[name].bundle.js',
@@ -19,6 +20,7 @@ module.exports = () => {
     },
     plugins: [
       new HtmlWebpackPlugin({
+        favicon: './favicon.ico',
         template: './index.html',
         title: 'Just Another Text Editor'
       }),
@@ -36,14 +38,14 @@ module.exports = () => {
         description: 'Browser based text editor application',
         start_url: './',
         publicPath: './',
-        theme_color: '#78081c',
-        background_color: '#78081c',
+        theme_color: '#848884',
+        background_color: '#848884',
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
             destination: path.join('assets', 'icons'),
-          },
+          }
         ],
       }),
       
